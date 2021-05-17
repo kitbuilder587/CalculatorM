@@ -1,6 +1,8 @@
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.math.BigInteger;
+
 public class TestInputInterpreter {
     @Test
     public void testCalculateAll() throws Exception {
@@ -43,5 +45,7 @@ public class TestInputInterpreter {
         Assert.assertEquals(res,new Fraction(-3,1));
         res = inputInterpreter.calculateResult("-(2-(-3/10)^2)-5*2");
         Assert.assertEquals(res,new Fraction(-1191,100));
+        res = inputInterpreter.calculateResult("10000^(100-1)");
+        Assert.assertEquals(res,new Fraction(new BigInteger("1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"),new BigInteger("1")));
     }
 }

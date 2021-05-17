@@ -75,8 +75,10 @@ public class InputInterpreter {
                 num = new StringBuilder();
             }
         }
-        res.append("[").append(num.toString());
-        res.append(",1]");
+        if(num.length() != 0) {
+            res.append("[").append(num.toString());
+            res.append(",1]");
+        }
         return res.toString().replace("()","");
     }
 
